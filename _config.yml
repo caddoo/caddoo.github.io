@@ -9,6 +9,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-tabs
 
 collections_dir: all_collections
 collections:
