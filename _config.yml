@@ -3,7 +3,7 @@ markdown: kramdown
 
 author:
   name: Matthew Caddoo
-
+url: "https://caddoo.net"
 plugins:
   - jemoji
   - jekyll-seo-tag
