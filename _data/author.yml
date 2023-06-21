@@ -15,6 +15,10 @@ description: "
 "
 contact:
   - title: linkedin
+    label: Linkedin profile of Matthew Caddoo
     url: https://www.linkedin.com/in/matthew-caddoo/
+    image_alt: Linkedin logo
   - title: github
+    label: Github account of Matthew Caddoo
     url: https://github.com/caddoo
+    image_alt: Github logo

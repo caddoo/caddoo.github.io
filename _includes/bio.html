@@ -6,8 +6,8 @@
     <div id="text-wrapper">{{site.data.author.description}}</div>
     <div id="social-wrapper">
       {% for i in site.data.author.contact %}
-      <a href="{{i.url}}" target="_blank">
-        <img src="{{site.baseurl}}/assets/icons/{{i.title}}.png" alt="" />
+      <a aria-label="{{i.label}}" href="{{i.url}}" target="_blank">
+        <img src="{{site.baseurl}}/assets/icons/{{i.title}}.png" alt="{{i.image_alt}}" />
       </a>
       {%endfor%}
     </div>
