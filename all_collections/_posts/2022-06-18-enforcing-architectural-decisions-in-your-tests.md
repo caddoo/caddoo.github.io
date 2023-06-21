@@ -4,7 +4,7 @@ title: Enforcing architectural decisions in your tests
 date: 2022-06-18
 ---
 
-## What?
+## What does the title mean?
 
 When I say 'Enforcing architectural decisions in your tests' what I essentially mean as architects/developers you write explicit automated tests for your code that would run alongside your other test suites (unit, integration etc). These tests can check for things like:
 
@@ -15,7 +15,7 @@ When I say 'Enforcing architectural decisions in your tests' what I essentially 
 
 And basically anything else you can infer from reflection & depending on which library you use.
 
-## Why?
+## Why might you want to do this
 
 When working on a project with multiple developers it's quite normal to write down a set of rules related to the codebase in some form of documentation (naming conventions, where things should go etc).
 
@@ -27,7 +27,7 @@ By adding automated test its reduces the chance of human error in PR reviews, we
 
 As a bonus if you write descriptive tests there is no reason you can't use those test descriptions as automatically generated documentation for your rules.
 
-## How?
+## How can you do this
 
 It makes sense to define your rules before you start your project. So, lets rely on the TDD process. Write our rules/tests first then start building the project.
 
@@ -43,7 +43,7 @@ These repositories provide good documentation to get you started.
 
 However I'm also going to run through a real scenario using these tools in C# & PHP.
 
-## Example
+## A basic example
 
 This example won't go into every step you need to take, but it will give you an idea of how rules are defined and what the output looks like when running tests.
 
