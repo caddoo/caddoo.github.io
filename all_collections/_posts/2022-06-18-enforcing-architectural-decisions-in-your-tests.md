@@ -6,7 +6,7 @@ date: 2022-06-18
 
 ## What?
 
-When I say 'Enforcing architectural decisions in your tests' what I essentially mean as architects/developers you write explicit automated tests for your code that would run alongside your other test suites (unit, integration etc) that can test for things like:
+When I say 'Enforcing architectural decisions in your tests' what I essentially mean as architects/developers you write explicit automated tests for your code that would run alongside your other test suites (unit, integration etc). These tests can check for things like:
 
 - Dependency references
 - Naming of classes/functions
@@ -19,19 +19,17 @@ And basically anything else you can infer from reflection & depending on which l
 
 When working on a project with multiple developers it's quite normal to write down a set of rules related to the codebase in some form of documentation (naming conventions, where things should go etc).
 
-This is quite important, although not always done, as it makes onboarding people easier and reduces the amount of time for PR reviews discussing things that are known by more experienced developers in the codebase but possibly not documented. 
+This is quite important, although not always done, as it makes onboarding people easier. It reduces the amount of time for PR reviews discussing things that are known by more experienced developers in the codebase but possibly not documented. 
 
 I'm a big advocate of automating whatever can be automated in your continous integration pipeline, you wouldn't make reviewers have to manually run the unit tests would you?!
 
-It reduces the chance of human error in PR reviews (it's easy to miss things) and it helps new people get up to speed in the codebase by getting nice big test failures when they violate the rules.
+By adding automated test its reduces the chance of human error in PR reviews, we know it's easy to miss things. Additionally this helps new people get up to speed in the codebase by getting nice big test failures when they violate the rules.
 
-As a bonus if you write nice descriptive tests there is no reason you can't use those test descriptions as automatically generated documentation for your rules.
+As a bonus if you write descriptive tests there is no reason you can't use those test descriptions as automatically generated documentation for your rules.
 
 ## How?
 
-It makes sense to define your rules before you start your project, so lets rely on the TDD process. Write our rules/tests first then start building the project.
-
-Of course you can implement rules on existing code bases where you would just have to take the extra steps of fixing your invalid code if there is any.
+It makes sense to define your rules before you start your project. So, lets rely on the TDD process. Write our rules/tests first then start building the project.
 
 We don't want to reinvent the wheel so here are a few libraries for different languages that do almost the same thing:
 
@@ -278,4 +276,6 @@ And run again
 
 ## Rounding up
 
-Making these checks part of your CI will help prevent your lovely original architectural decisions from going off the rails, it's up to you how many rules you add, you can write nearly an unlimited amount of rules, so be pragmatic and set rules that are important for you and your project.
+Making these checks part of your CI will help prevent your lovely original architectural decisions from going off the rails. It's up to you how many rules you add. 
+
+You can write nearly an unlimited amount of rules, so be pragmatic and set rules that are important for you and your project.
