@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Enforcing architectural decisions in your tests
-date: 2022-06-18
+date: 2023-06-18
 ---
 
 ## What does the title mean?
