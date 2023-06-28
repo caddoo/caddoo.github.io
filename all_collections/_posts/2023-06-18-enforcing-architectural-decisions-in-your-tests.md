@@ -150,18 +150,18 @@ public class ArchitectureTests
             .And().NotHaveDependencyOn("Infrastructure")
             .GetResult();
         
-        Assert.True(result.IsSuccessful);
+        Assert.True(result.IsSuccessful, String.Join(",", result.FailingTypes));
     }
     
     [Fact]
-    public void ApplicationLayerCantDependOInfrastructureLayer()
+    public void ApplicationLayerCantDependOnInfrastructureLayer()
     {
         var result = Types.InAssembly(typeof(EggHandler).Assembly)
             .ShouldNot()
             .HaveDependencyOn("Infrastructure")
             .GetResult();
         
-        Assert.True(result.IsSuccessful);
+        Assert.True(result.IsSuccessful, String.Join(",", result.FailingTypes));
     }
     
     [Fact]
@@ -172,7 +172,7 @@ public class ArchitectureTests
             .Should().ResideInNamespaceMatching("Application")
             .GetResult();
         
-        Assert.True(result.IsSuccessful);
+        Assert.True(result.IsSuccessful, String.Join(",", result.FailingTypes));
     }
     
     [Fact]
@@ -183,19 +183,18 @@ public class ArchitectureTests
             .Should().ResideInNamespaceMatching("Application")
             .GetResult();
         
-        Assert.True(result.IsSuccessful);
+        Assert.True(result.IsSuccessful, String.Join(",", result.FailingTypes));
     }
     
     [Fact]
     public void ControllersShouldOnlyResideInInfrastructureLayer()
     {
         var result = Types.InAssemblies(_getAssembliesUnderTest())
-            .That().DoNotResideInNamespaceStartingWith("Jetbrains")
-            .And().HaveNameEndingWith("Controller")
+            .That().HaveNameEndingWith("Controller")
             .Should().ResideInNamespaceMatching("Infrastructure")
             .GetResult();
         
-        Assert.True(result.IsSuccessful);
+        Assert.True(result.IsSuccessful, String.Join(",", result.FailingTypes));
     }
     
     [Fact]
@@ -207,7 +206,7 @@ public class ArchitectureTests
             .Should().Inherit(typeof(BaseController))
             .GetResult();
         
-        Assert.True(result.IsSuccessful);
+        Assert.True(result.IsSuccessful, String.Join(",", result.FailingTypes));
     }
 
     private IEnumerable<Assembly> _getAssembliesUnderTest()
