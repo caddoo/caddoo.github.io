@@ -61,7 +61,7 @@ The final executes everything and completes our unit of work.
 
 In the implementation what we will do is record a buffer of the write and delete operations and essentially queue them up in a dictionary in C# or an array in PHP.
 
-When the `Execute()` method is called it will interate over the queued writes and persist them into the file system and then do the a similar thing but rather than write it will delete.
+When the `Execute()` method is called it will iterate over the queued writes and persist them into the file system and then do the a similar thing but rather than write it will delete.
 
 The implemention of `Execute()` will be wrapped in a try/catch and if anything fails, then an internal `Rollback()` method will be called which will do something called a `compensation operation` basically doing the inverse of what was requested orginally, it will delete newly created files and then re-add deleted files.
 
